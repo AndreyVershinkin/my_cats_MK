@@ -20,13 +20,7 @@
    <main class="main container">
       <section class="cards">
          <h2 class="visually-hidden">Список котиков</h2>
-         <div class="card">
-            <img src="./images/c1.png" alt="Image" class="card__image">
-            <a href="#" class="card__link">
-               <h3 class="card__name">Vasya</h3>
-            </a>
-            <button class="card__like" aria-label="Поставить лайк"><i class="fa-solid fa-heart fa-2x"></i></button>
-         </div>
+
       </section>
    </main>
    <footer class="footer">
@@ -50,22 +44,32 @@
             <input type="number" class="form__input" name="id" min="1" required placeholder="id">
             <input type="number" class="form__input" name="age" placeholder="Возраст">
             <input type="text" class="form__input" name="name" required placeholder="Имя">
-            <input type="number" class="form__input" name="rate" placeholder="Рейтинг (0-10)" min="0" max="30">
+            <input type="number" class="form__input" name="rate" placeholder="Рейтинг (0-10)" min="0" max="10">
             <textarea name="description" class="form__input form__textarea" placeholder="Описание"></textarea>
             <label class="form__checkbox-wrap">
-               <input type="checkbox" name="favourite" class="form__checkbox" placeholder="">
+               <input type="checkbox" name="favourite" class="form__checkbox " placeholder="">
                <span class="form__label">Любимчик</span>
-               <span class="form__fake-checkbox"><i class="fa-regular fa-circle-chek"></i></span>
+               <span class="form__fake-checkbox"><i class="fa-regular fa-circle-check"></i></span>
             </label>
-            <input type="url" class="form__input form__input-image" name="img_link" placeholder="Ссылка">
+            <input type="url" class="form__input form__input_image" name="img_link" placeholder="Ссылка на фото">
             <button type="submit" class="form__btn btn">Добавить котика</button>
          </form>
       </div>
    </div>
-   <script src="/js/api.js" defer></script>
-   <script src="/js/cats.js" defer></script>
-   <script src="/js/card.js" defer></script>
-   <script src="/js/index.js" defer></script>
+   <template id="card-template">
+      <div class="card">
+         <img src="./images/c1.png" alt="Image" class="card__image">
+         <a href="#" class="card__link">
+            <h3 class="card__name">Vasya</h3>
+         </a>
+         <button class="card__like" aria-label="Поставить лайк"><i class="fa-solid fa-heart fa-2x"></i></button>
+      </div>
+   </template>
+   <script src="js/popup.js" defer></script>
+   <script src="js/api.js" defer></script>
+   <script src="js/cats.js" defer></script>
+   <script src="js/card.js" defer></script>
+   <script src="js/index.js" defer></script>
 </body>
 
 </html>

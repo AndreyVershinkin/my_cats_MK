@@ -3,7 +3,7 @@ const CONFIG_API = {
    headers: {
       'Content-type': 'application/json'
    }
-};
+}
 
 
 class Api {
@@ -12,18 +12,23 @@ class Api {
       this._headers = config.headers;
    }
 
+   _onResponce(res) {
+      return res.ok ? res.json() : Promise.reject({ ...res, message: "Ошибка на стороне сервера" })
+   }
+
+
    getAllCats() {
-      fetch(`${this._url}/show`, {
+      return fetch(`${this._url}/show`, {
          method: 'GET'
-      });
+      }).then(this._onResponce)
    }
 
    addNewCat(data) {
-      fetch(`${this._url}/add`, {
+      return fetch(`${this._url}/add`, {
          method: 'POST',
          body: JSON.stringify(data),
          headers: this._headers
-      });
+      }).then(this._onResponce)
    }
 
    updateCatById(idCat, data) {
@@ -31,19 +36,19 @@ class Api {
          method: 'PUT',
          body: JSON.stringify(data),
          headers: this._headers
-      });
+      })
    }
 
    getCatById(idCat) {
       fetch(`${this._url}/show/${idCat}`, {
          method: 'GET',
-      });
+      })
    }
 
    deleteCatById(idCat) {
       fetch(`${this._url}/delete/${idCat}`, {
          method: 'DELETE',
-      });
+      })
    }
 }
 

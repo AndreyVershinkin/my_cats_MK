@@ -58,7 +58,7 @@
 
 .form__checkbox:checked~.form__fake-checkbox,
 .form__checkbox:checked~.form__label {
-    color: var(--accent-color);
+    color: var(--tertiary-color);
 }
 
 .form__checkbox:checked:focus~.form__fake-checkbox,

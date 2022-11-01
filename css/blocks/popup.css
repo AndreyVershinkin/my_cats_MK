@@ -22,6 +22,7 @@
 
 .popup__container {
     max-width: 600px;
+    width: 100%;
     background-color: var(--form-color);
     padding: 20px;
     position: relative;
@@ -33,7 +34,7 @@
     right: 20px;
 }
 
-.popup__close_external {
+.popup__close-external {
     background-color: transparent;
     color: var(--bg-main-color);
     top: -40px;
